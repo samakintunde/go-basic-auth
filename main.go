@@ -3,7 +3,6 @@ package main
 import (
 	"crypto/sha256"
 	"crypto/subtle"
-	_ "embed"
 	"fmt"
 	"log"
 	"net/http"
