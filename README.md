@@ -1,7 +1,7 @@
 # Go Basic Auth
 
-A fairly secure app with basic auth following some best practices to improve security. Prompts you for a password when
-accessing the protected route. Uses a custom middleware to implement basic auth guard.
+A fairly secure implementation of basic auth following some best practices improving security. Prompts you for a
+password when accessing the protected route. Uses a custom middleware to implement basic auth guard.
 
 ### Steps taken to improve security
 
@@ -14,3 +14,8 @@ accessing the protected route. Uses a custom middleware to implement basic auth 
 - [Unprotected route - `/`]("https://go-basic-auth.herokuapp.com/")
 - [Protected route - `/dashboard`]("https://go-basic-auth.herokuapp.com/dashboard")
 
+### Challenges
+
+- Heroku's base tier does not allow me to serve with `.ListenAndServeTLS` because of challenges around obtaining a
+  certificate and being able to reference that in the serve function. An explanation is found in
+  this [Stack Overflow answer](https://stackoverflow.com/a/30501671/8294338).
