@@ -30,7 +30,7 @@ type App struct {
 
 func main() {
 	if port == "" {
-		port = ":5000"
+		port = "5000"
 	}
 
 	app := new(App)
@@ -47,7 +47,7 @@ func main() {
 	mux.HandleFunc("/dashboard", app.basicAuth(handleDashboard)) // Protected route
 
 	srv := &http.Server{
-		Addr:         port,
+		Addr:         fmt.Sprintf(":%s", port),
 		Handler:      mux,
 		IdleTimeout:  idleTimeout,
 		ReadTimeout:  readTimeout,
