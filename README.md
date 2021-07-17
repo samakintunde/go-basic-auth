@@ -3,6 +3,13 @@
 A fairly secure implementation of basic auth following some best practices improving security. Prompts you for a
 password when accessing the protected route. Uses a custom middleware to implement basic auth guard.
 
+Clone and set `AUTH_USERNAME` and `AUTH_PASSWORD` as environment variables.
+```
+  $ AUTH_USERNAME={YOUR_USERNAME} AUTH_PASSWORD={YOUR_PASSWORD} go run main.go
+```
+
+As this was a simple implementation, it wasn't connected to any Database. Also the reason SHA256 was used to hash the credentials. If storing them, a stronger hash should be chosen.
+
 ### Steps taken to improve security
 
 1. Hash passwords and usernames to make their lengths obscure from an attacker.
